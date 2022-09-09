@@ -1,6 +1,16 @@
 edubitSoundBit.onEvent(SoundSensorCompareType.LessThan, 802, function () {
     radio.sendNumber(0)
 })
+edubitSoundBit.onEvent(SoundSensorCompareType.MoreThan, 802, function () {
+    turtle.setSpeed(50)
+    turtle.turnLeft()
+    turtle.turnRight()
+    turtle.turnLeft()
+    turtle.turnRight()
+    turtle.turnRight()
+    turtle.turnLeft()
+    turtle.turnLeft()
+})
 input.onButtonPressed(Button.A, function () {
     turtle.turnLeft()
 })
@@ -22,16 +32,4 @@ input.onGesture(Gesture.Shake, function () {
 })
 input.onGesture(Gesture.TiltRight, function () {
     turtle.back(1)
-})
-basic.forever(function () {
-    if (edubitIrBit.isIrSensorTriggered()) {
-        turtle.setSpeed(50)
-        turtle.turnLeft()
-        turtle.turnRight()
-        turtle.turnLeft()
-        turtle.turnRight()
-        turtle.turnRight()
-        turtle.turnLeft()
-        turtle.turnLeft()
-    }
 })
